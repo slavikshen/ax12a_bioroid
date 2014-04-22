@@ -303,15 +303,6 @@
 	  <material name="blue"></material>
 	</visual>
 	</link>
-	
-	<!-- 
-<link name="d8_join">
-	<visual>
-	  <geometry><cylinder length="0.05" radius="0.03" /></geometry>
-	  <material name="red"></material>
-	</visual>
-	</link>
- -->
 
 	<joint name="s7" type="revolute">
 	  <parent link="d7"/>
@@ -320,16 +311,6 @@
 	  <axis xyz="0 0 -1"/>
 	  <limit effort="0" lower="-3.14" upper="3.14" velocity="0.5"/>
 	</joint>
-	
-	<!-- 
-<joint name="s8" type="revolute">
-	  <parent link="d8"/>
-	  <child link="d8_join"/>
-	  <origin xyz="0.05 0 0" rpy="0 -1.57 0"/>
-	  <axis xyz="0 0 -1"/>
-	  <limit effort="0" lower="-3.14" upper="3.14" velocity="0.5"/>
-	</joint>
- -->
 		
 	<link name="upper_femur_right">
 	<visual>
@@ -337,29 +318,12 @@
 	  <material name="lgray"></material>
 	</visual>
 	</link>
-	
-	<!-- 
-<link name="upper_femur_left">
-	<visual>
-	  <geometry><box size="0.21 0.14 0.14"/></geometry>
-	  <material name="lgray"></material>
-	</visual>
-	</link>
- -->
-	
+
 	<joint name="d7_joint_upper_femur_right" type="fixed">
 	  <parent link="d7_join"/>
 	  <child link="upper_femur_right"/>
 	  <origin xyz="0 0 -0.09" rpy="0 0 0"/>
 	</joint>
-
-<!-- 
-	<joint name="d8_joint_upper_femur_left" type="fixed">
-	  <parent link="d8_join"/>
-	  <child link="upper_femur_left"/>
-	  <origin xyz="0 0 -0.09" rpy="0 0 0"/>
-	</joint>
- -->
 	
 	<joint name="s9" type="revolute">
 	  <parent link="upper_femur_right"/>
@@ -573,7 +537,7 @@
 	<link name="d8_join">
 	<visual>
 	  <geometry><cylinder length="0.05" radius="0.03" /></geometry>
-	  <material name="blue"></material>
+	  <material name="red"></material>
 	</visual>
 	</link>
 	
@@ -616,7 +580,7 @@
 	<link name="d10_join">
 	<visual>
 	  <geometry><cylinder length="0.05" radius="0.03" /></geometry>
-	  <material name="blue"></material>
+	  <material name="red"></material>
 	</visual>
 	</link>
 	
@@ -636,7 +600,7 @@
 	<link name="d12_join">
 	<visual>
 	  <geometry><cylinder length="0.17" radius="0.03" /></geometry>
-	  <material name="blue"></material>
+	  <material name="red"></material>
 	</visual>
 	</link>
 		
@@ -683,7 +647,7 @@
 	<link name="d14_join">
 	<visual>
 	  <geometry><cylinder length="0.17" radius="0.03" /></geometry>
-	  <material name="blue"></material>
+	  <material name="red"></material>
 	</visual>
 	</link>
 	
@@ -724,7 +688,7 @@
 	<link name="d16_join">
 	<visual>
 	  <geometry><cylinder length="0.17" radius="0.03" /></geometry>
-	  <material name="blue"></material>
+	  <material name="red"></material>
 	</visual>
 	</link>
 	
@@ -765,7 +729,7 @@
 	<link name="d18_join">
 	<visual>
 	  <geometry><cylinder length="0.17" radius="0.05" /></geometry>
-	  <material name="blue"></material>
+	  <material name="red"></material>
 	</visual>
 	</link>
 	
