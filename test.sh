@@ -1,3 +1,6 @@
+echo "begin test in 3 seconds"
+sleep 3s
+
 rostopic pub -1 /s1/command std_msgs/Float64 --  1
 rostopic pub -1 /s2/command std_msgs/Float64 -- -1
 
