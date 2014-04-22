@@ -1,0 +1,15 @@
+<package>
+  <description brief="ax12a_bioroid">
+
+     AX12-A Bioroid
+
+  </description>
+  <author>slavik</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/my_dynamixel_tutorial</url>
+  <depend package="dynamixel_controllers"/>
+
+</package>
+
+

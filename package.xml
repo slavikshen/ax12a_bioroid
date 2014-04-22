@@ -1,0 +1,25 @@
+<package>
+  <name>ax12a_bioroid</name>
+  <version>0.4.0</version>
+  <description>
+    Configuration for AX12-A servos and bioroid
+  </description>
+  <maintainer email="slavikshen@gmail.com">Slavik Shen</maintainer>
+
+  <license>BSD</license>
+
+  <url type="website">http://ros.org/wiki/dynamixel_driver</url>
+  <url type="bugtracker">https://github.com/arebgun/dynamixel_motor</url>
+
+  <author>Slavik Shen</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>dynamixel_controllers</run_depend>
+  <run_depend>urdf</run_depend>
+  <run_depend>urdf_tutroial</run_depend>
+
+  <export>
+
+  </export>
+</package>

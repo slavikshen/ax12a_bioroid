@@ -1,0 +1,808 @@
+<?xml version="1.0" ?>
+<robot name="bioloid">
+
+<!-- body begins -->
+    <link name="base_link">
+    <visual>
+      <geometry><box size="0.4 0.24 0.2" /></geometry>
+      <material name="gray"><color rgba="0.6 0.6 0.6 0.9"/></material>
+    </visual>
+    </link>
+
+    <link name="head">
+    <visual>
+      <geometry><box size="0.14 0.2 0.14" /></geometry>
+      <material name="gray"></material>
+    </visual>
+    </link>
+
+    <joint name="neck" type="fixed">
+    <parent link="base_link"/>
+    <child link="head"/>
+    <origin xyz="0 0 0.18"/>
+    </joint>
+
+<!-- body ends -->
+
+<!-- right arm begins -->
+  
+	<link name="d1">
+	<visual>
+	  <geometry><box size="0.09 0.12 0.2"/></geometry>
+	  <material name="dgray"><color rgba="0.3 0.3 0.3 0.95"/></material>          
+	</visual>
+	</link>
+
+	<joint name="d1_d1_join" type="fixed">
+	  <parent link="base_link"/>
+	  <child link="d1"/>
+	  <origin xyz="0.2 0 0.05" rpy="-1.57 0 0"/>
+	</joint>
+
+	<link name="d1_join">
+	<visual>
+	  <geometry><cylinder length="0.1" radius="0.04" /></geometry>
+	  <material name="blue"><color rgba="0.3 0.3 1 1"/></material>
+	</visual>
+	</link>
+
+	<joint name="s1" type="revolute">
+	  <parent link="d1"/>
+	  <child link="d1_join"/>
+	  <origin xyz="0.05 0 0" rpy="0 -1.57 0"/>
+	  <axis xyz="0 0 -1"/>
+	  <limit effort="0" lower="-3.14" upper="3.14" velocity="0.5"/>
+	</joint>
+
+	<link name="shoulder_right">
+	<visual>
+	  <geometry><box size="0.09 0.09 0.09"/></geometry>
+	  <material name="clear_gray"><color rgba="0.6 0.6 0.6 0.8"/></material>          
+	</visual>
+	</link>
+
+	<joint name="d1_join_shoulder_right" type="fixed">
+	<parent link="d1_join"/>
+	<child link="shoulder_right"/>
+	<origin xyz="0 0 -0.1" rpy="0 0 0"/>
+	</joint>
+
+	<link name="d3_join">
+	<visual>
+	  <geometry><cylinder length="0.05" radius="0.03" /></geometry>
+	  <material name="blue"></material>
+	</visual>
+	</link>
+
+	<link name="d3">
+	<visual>
+	  <geometry><box size="0.09 0.12 0.2"/></geometry>
+	  <material name="dgray"></material>          
+	</visual>
+	</link>
+	
+	<joint name="d3_d3_join" type="fixed">
+	  <parent link="d3_join"/>
+	  <child link="d3"/>
+	  <origin xyz="0 -0.1 0" rpy="-1.57 0 0"/>
+	</joint>
+
+	<joint name="s3" type="revolute">
+	  <parent link="shoulder_right"/>
+	  <child link="d3_join"/>
+	  <origin xyz="0.05 0 0" rpy="1.57 0 0"/>
+	  <axis xyz="0 0 -1"/>
+	  <limit effort="0" lower="-3.14" upper="3.14" velocity="0.5"/>
+	</joint>
+
+	<link name="arm_joint_right">
+	<visual>
+	  <geometry><box size="0.09 0.09 0.09"/></geometry>
+	  <material name="clear_gray"></material>          
+	</visual>
+	</link>
+
+	<joint name="d3_arm_joint_right" type="fixed">
+	  <parent link="d3"/>
+	  <child link="arm_joint_right"/>
+	  <origin xyz="0 0 -0.145" rpy="0 0 0"/>
+	</joint>
+
+	<link name="d5_join">
+	<visual>
+	  <geometry><cylinder length="0.05" radius="0.03" /></geometry>
+	  <material name="blue"></material>
+	</visual>
+	</link>
+
+	<link name="d5">
+	<visual>
+	  <geometry><box size="0.09 0.12 0.2"/></geometry>
+	  <material name="dgray"></material>          
+	</visual>
+	</link>
+
+	<joint name="d5_d5_join" type="fixed">
+	  <parent link="d5_join"/>
+	  <child link="d5"/>
+	  <origin xyz="0 -0.1 0" rpy="-1.57 0 0"/>
+	</joint>
+
+	<joint name="s5" type="revolute">
+	  <parent link="arm_joint_right"/>
+	  <child link="d5_join"/>
+	  <origin xyz="0 0 -0.05" rpy="1.57 0 0"/>
+	  <axis xyz="0 0 -1"/>
+	  <limit effort="0" lower="-3.14" upper="3.14" velocity="0.5"/>
+	</joint>
+      
+<!-- right arm ends -->
+
+
+<!-- left arm begins -->
+  
+	<link name="d2">
+	<visual>
+	  <geometry><box size="0.09 0.12 0.2"/></geometry>
+	  <material name="dgray"></material>          
+	</visual>
+	</link>
+
+	<joint name="d2_d2_join" type="fixed">
+	  <parent link="base_link"/>
+	  <child link="d2"/>
+	  <origin xyz="-0.2 0 0.05" rpy="-1.57 0 3.14"/>
+	</joint>
+
+	<link name="d2_join">
+	<visual>
+	  <geometry><cylinder length="0.1" radius="0.04" /></geometry>
+	  <material name="red"><color rgba="1 0.3 0.3 1"/></material>
+	</visual>
+	</link>
+	
+	<joint name="s2" type="revolute">
+	  <parent link="d2"/>
+	  <child link="d2_join"/>
+	  <origin xyz="0.05 0 0" rpy="0 -1.57 0"/>
+	  <axis xyz="0 0 -1"/>
+	  <limit effort="0" lower="-3.14" upper="3.14" velocity="0.5"/>
+	</joint>	
+
+	<link name="shoulder_left">
+	<visual>
+	  <geometry><box size="0.09 0.09 0.09"/></geometry>
+	  <material name="clear_gray"></material>          
+	</visual>
+	</link>
+
+	<joint name="d2_join_shoulder_left" type="fixed">
+	<parent link="d2_join"/>
+	<child link="shoulder_left"/>
+	<origin xyz="0 0 -0.1" rpy="0 0 0"/>
+	</joint>
+	
+	<link name="d4_join">
+	<visual>
+	  <geometry><cylinder length="0.05" radius="0.03" /></geometry>
+	  <material name="red"></material>
+	</visual>
+	</link>
+
+	<link name="d4">
+	<visual>
+	  <geometry><box size="0.09 0.12 0.2"/></geometry>
+	  <material name="dgray"></material>          
+	</visual>
+	</link>
+	
+	<joint name="d4_d4_join" type="fixed">
+	  <parent link="d4_join"/>
+	  <child link="d4"/>
+	  <origin xyz="0 -0.1 0" rpy="-1.57 0 0"/>
+	</joint>
+	
+	<joint name="s4" type="revolute">
+	  <parent link="shoulder_left"/>
+	  <child link="d4_join"/>
+	  <origin xyz="-0.05 0 0" rpy="1.57 0 0"/>
+	  <axis xyz="0 0 -1"/>
+	  <limit effort="0" lower="-3.14" upper="3.14" velocity="0.5"/>
+	</joint>
+	
+	<link name="arm_joint_left">
+	<visual>
+	  <geometry><box size="0.09 0.09 0.09"/></geometry>
+	  <material name="clear_gray"></material>          
+	</visual>
+	</link>
+
+	<joint name="d4_arm_joint_left" type="fixed">
+	  <parent link="d4"/>
+	  <child link="arm_joint_left"/>
+	  <origin xyz="0 0 -0.145" rpy="0 0 0"/>
+	</joint>
+
+	<link name="d6_join">
+	<visual>
+	  <geometry><cylinder length="0.05" radius="0.03" /></geometry>
+	  <material name="blue"></material>
+	</visual>
+	</link>
+
+	<link name="d6">
+	<visual>
+	  <geometry><box size="0.09 0.12 0.2"/></geometry>
+	  <material name="dgray"></material>          
+	</visual>
+	</link>
+
+	<joint name="d6_d6_join" type="fixed">
+	  <parent link="d6_join"/>
+	  <child link="d6"/>
+	  <origin xyz="0 -0.1 0" rpy="-1.57 0 0"/>
+	</joint>
+
+	<joint name="s6" type="revolute">
+	  <parent link="arm_joint_left"/>
+	  <child link="d6_join"/>
+	  <origin xyz="0 0 -0.05" rpy="1.57 0 0"/>
+	  <axis xyz="0 0 -1"/>
+	  <limit effort="0" lower="-3.14" upper="3.14" velocity="0.5"/>
+	</joint>
+
+<!-- left arm ends -->
+
+<!-- pelvis begins -->
+	<link name="pelvis">
+	<visual>
+	  <geometry><box size="0.1 0.24 0.12"/></geometry>
+	  <material name="lgray"><color rgba="0.7 0.7 0.7 0.8"/></material>         
+	</visual>
+	</link>
+	
+	<joint name="base_link_pelvis" type="fixed">
+	  <parent link="base_link"/>
+	  <child link="pelvis"/>
+	  <origin xyz="0 0 -0.16"/>
+	</joint>
+	
+	<link name="d7">
+	<visual>
+	  <geometry><box size="0.09 0.12 0.2"/></geometry>
+	  <material name="dgray"></material>          
+	</visual>
+	</link>
+	
+	<link name="d8">
+	<visual>
+	  <geometry><box size="0.09 0.12 0.2"/></geometry>
+	  <material name="dgray"></material>          
+	</visual>
+	</link>
+	
+	<joint name="pelvis_d7_right" type="fixed">
+	  <parent link="pelvis"/>
+	  <child link="d7"/>
+	  <origin xyz="0.09 0 0" rpy="1.57 1.57 0"/>
+	</joint>
+
+	<joint name="pelvis_d8_left" type="fixed">
+	  <parent link="pelvis"/>
+	  <child link="d8"/>
+	  <origin xyz="-0.09 0 0" rpy="1.57 1.57 0"/>
+	</joint>
+	
+<!-- pelvis ends -->
+	
+<!-- right leg begins -->
+
+	<link name="d7_join">
+	<visual>
+	  <geometry><cylinder length="0.05" radius="0.03" /></geometry>
+	  <material name="blue"></material>
+	</visual>
+	</link>
+	
+	<!-- 
+<link name="d8_join">
+	<visual>
+	  <geometry><cylinder length="0.05" radius="0.03" /></geometry>
+	  <material name="red"></material>
+	</visual>
+	</link>
+ -->
+
+	<joint name="s7" type="revolute">
+	  <parent link="d7"/>
+	  <child link="d7_join"/>
+	  <origin xyz="0.05 0 0" rpy="0 -1.57 0"/>
+	  <axis xyz="0 0 -1"/>
+	  <limit effort="0" lower="-3.14" upper="3.14" velocity="0.5"/>
+	</joint>
+	
+	<!-- 
+<joint name="s8" type="revolute">
+	  <parent link="d8"/>
+	  <child link="d8_join"/>
+	  <origin xyz="0.05 0 0" rpy="0 -1.57 0"/>
+	  <axis xyz="0 0 -1"/>
+	  <limit effort="0" lower="-3.14" upper="3.14" velocity="0.5"/>
+	</joint>
+ -->
+		
+	<link name="upper_femur_right">
+	<visual>
+	  <geometry><box size="0.21 0.14 0.14"/></geometry>
+	  <material name="lgray"></material>
+	</visual>
+	</link>
+	
+	<!-- 
+<link name="upper_femur_left">
+	<visual>
+	  <geometry><box size="0.21 0.14 0.14"/></geometry>
+	  <material name="lgray"></material>
+	</visual>
+	</link>
+ -->
+	
+	<joint name="d7_joint_upper_femur_right" type="fixed">
+	  <parent link="d7_join"/>
+	  <child link="upper_femur_right"/>
+	  <origin xyz="0 0 -0.09" rpy="0 0 0"/>
+	</joint>
+
+<!-- 
+	<joint name="d8_joint_upper_femur_left" type="fixed">
+	  <parent link="d8_join"/>
+	  <child link="upper_femur_left"/>
+	  <origin xyz="0 0 -0.09" rpy="0 0 0"/>
+	</joint>
+ -->
+	
+	<joint name="s9" type="revolute">
+	  <parent link="upper_femur_right"/>
+	  <child link="d9_join"/>
+	  <origin xyz="0.1 0 -0.08" rpy="0 -1.57 0"/>
+	  <axis xyz="0 0 1"/>
+	  <limit effort="0" lower="-3.14" upper="3.14" velocity="0.5"/>
+	</joint>
+		
+	<link name="d9">
+	<visual>
+	  <geometry><box size="0.09 0.12 0.2"/></geometry>
+	  <material name="dgray"></material>          
+	</visual>
+	</link>
+	
+	<link name="d9_join">
+	<visual>
+	  <geometry><cylinder length="0.05" radius="0.03" /></geometry>
+	  <material name="blue"></material>
+	</visual>
+	</link>
+	
+	<joint name="d9_d9_join" type="fixed">
+	  <parent link="d9_join"/>
+	  <child link="d9"/>
+	  <origin xyz="-0.1 0 0.06" rpy="0 -1.57 0"/>
+	</joint>
+	
+	<link name="d11">
+	<visual>
+	  <geometry><box size="0.09 0.12 0.2"/></geometry>
+	  <material name="dgray"></material>          
+	</visual>
+	</link>
+	
+	<link name="d11_join">
+	<visual>
+	  <geometry><cylinder length="0.17" radius="0.03" /></geometry>
+	  <material name="blue"></material>
+	</visual>
+	</link>
+		
+	<joint name="d9_d11" type="fixed">
+	  <parent link="d9"/>
+	  <child link="d11"/>
+	  <origin xyz="0.1 0 0" rpy="0 0 1.57"/>
+	</joint>
+		
+	<joint name="d11_d11_join" type="fixed">
+	  <parent link="d11"/>
+	  <child link="d11_join"/>
+	  <origin xyz="0 0 0.05" rpy="0 -1.57 0"/>
+	</joint>
+	
+	<link name="mid_femur_right">
+	<visual>
+	  <geometry><box size="0.15 0.15 0.15"/></geometry>
+	  <material name="lgray"></material>
+	</visual>
+	</link>
+	
+	<link name="low_femur_right">
+	<visual>
+	  <geometry><box size="0.15 0.15 0.2"/></geometry>
+	  <material name="lgray"></material>
+	</visual>
+	</link>	
+	
+	<joint name="s11" type="revolute">
+	  <parent link="d11_join"/>
+	  <child link="mid_femur_right"/>
+	  <origin xyz="0 0 0" rpy="0 0 0"/>
+	  <axis xyz="0 0 1"/>
+	  <limit effort="0" lower="-3.14" upper="3.14" velocity="0.5"/>
+	</joint>
+	
+	<joint name="ext_femur_right" type="fixed">
+	  <parent link="mid_femur_right"/>
+	  <child link="low_femur_right"/>
+	  <origin xyz="0.15 0.05 0" rpy="0 -1.57 0"/>
+	</joint>
+	
+	<link name="d13_join">
+	<visual>
+	  <geometry><cylinder length="0.17" radius="0.03" /></geometry>
+	  <material name="blue"></material>
+	</visual>
+	</link>
+	
+	<joint name="s13" type="revolute">
+	  <parent link="low_femur_right"/>
+	  <child link="d13_join"/>
+	  <origin xyz="0 0 -0.07" rpy="0 -1.57 0"/>
+	  <axis xyz="0 0 1"/>
+	  <limit effort="0" lower="-3.14" upper="3.14" velocity="0.5"/>
+	</joint>
+
+	<link name="d13">
+	<visual>
+	  <geometry><box size="0.09 0.12 0.2"/></geometry>
+	  <material name="dgray"></material>          
+	</visual>
+	</link>	
+	
+	<joint name="d13_d13_join" type="fixed">
+	  <parent link="d13_join"/>
+	  <child link="d13"/>
+	  <origin xyz="0 -0.05 0" rpy="0 -1.57 -1.57"/>
+	</joint>
+	
+	<link name="tibia_right">
+	<visual>
+	  <geometry><box size="0.15 0.15 0.26"/></geometry>
+	  <material name="lgray"></material>
+	</visual>
+	</link>
+	
+	<joint name="d13_tibia_right" type="fixed">
+	  <parent link="d13"/>
+	  <child link="tibia_right"/>
+	  <origin xyz="0 -0.15 0" rpy="1.57 0 0"/>
+	</joint>
+	
+	<link name="d15_join">
+	<visual>
+	  <geometry><cylinder length="0.17" radius="0.03" /></geometry>
+	  <material name="blue"></material>
+	</visual>
+	</link>
+	
+	<joint name="s15" type="revolute">
+	  <parent link="tibia_right"/>
+	  <child link="d15_join"/>
+	  <origin xyz="0 0 0.09" rpy="0 -1.57 0"/>
+	  <axis xyz="0 0 -1"/>
+	  <limit effort="0" lower="-3.14" upper="3.14" velocity="0.5"/>
+	</joint>
+	
+	<link name="d15">
+	<visual>
+	  <geometry><box size="0.09 0.12 0.2"/></geometry>
+	  <material name="dgray"></material>          
+	</visual>
+	</link>	
+	
+	<joint name="d15_d15_join" type="fixed">
+	  <parent link="d15_join"/>
+	  <child link="d15"/>
+	  <origin xyz="-0.05 0 0" rpy="0 -1.57 0"/>
+	</joint>
+	
+	<link name="d17">
+	<visual>
+	  <geometry><box size="0.09 0.12 0.2"/></geometry>
+	  <material name="dgray"></material>          
+	</visual>
+	</link>
+	
+	<joint name="d15_d17" type="fixed">
+	  <parent link="d15"/>
+	  <child link="d17"/>
+	  <origin xyz="0 0.1 0" rpy="0 0 1.57"/>
+	</joint>
+	
+	<link name="d17_join">
+	<visual>
+	  <geometry><cylinder length="0.17" radius="0.05" /></geometry>
+	  <material name="blue"></material>
+	</visual>
+	</link>
+	
+	<joint name="s17" type="revolute">
+	  <parent link="d17"/>
+	  <child link="d17_join"/>
+	  <origin xyz="0 0 -0.06" rpy="0 -1.57 0"/>
+	  <axis xyz="0 0 -1"/>
+	  <limit effort="0" lower="-3.14" upper="3.14" velocity="0.5"/>
+	</joint>
+	
+	<link name="feet_join_right">
+	<visual>
+	  <geometry><box size="0.1 0.06 0.2"/></geometry>
+	  <material name="lgray"></material>
+	</visual>
+	</link>
+	
+	<joint name="d17_join_feet_right" type="fixed">
+	  <parent link="d17_join"/>
+	  <child link="feet_join_right"/>
+	  <origin xyz="-0.05 0 0" rpy="0 0 0"/>
+	</joint>
+	
+	<link name="feet_right">
+	<visual>
+	  <geometry><box size="0.05 0.25 0.4"/></geometry>
+	  <material name="lgray"></material>
+	</visual>
+	</link>
+	
+	<joint name="feet_join_right_feet_right" type="fixed">
+	  <parent link="feet_join_right"/>
+	  <child link="feet_right"/>
+	  <origin xyz="-0.05 0 0.1" rpy="0 0 0"/>
+	</joint>
+	
+<!-- right leg ends -->
+
+<!-- left leg begins -->
+
+	<link name="d8_join">
+	<visual>
+	  <geometry><cylinder length="0.05" radius="0.03" /></geometry>
+	  <material name="blue"></material>
+	</visual>
+	</link>
+	
+	<joint name="s8" type="revolute">
+	  <parent link="d8"/>
+	  <child link="d8_join"/>
+	  <origin xyz="0.05 0 0" rpy="0 -1.57 0"/>
+	  <axis xyz="0 0 -1"/>
+	  <limit effort="0" lower="-3.14" upper="3.14" velocity="0.5"/>
+	</joint>
+	
+	<link name="upper_femur_left">
+	<visual>
+	  <geometry><box size="0.21 0.14 0.14"/></geometry>
+	  <material name="lgray"></material>
+	</visual>
+	</link>
+
+	<joint name="d8_joint_upper_femur_left" type="fixed">
+	  <parent link="d8_join"/>
+	  <child link="upper_femur_left"/>
+	  <origin xyz="0 0 -0.09" rpy="0 0 0"/>
+	</joint>
+	
+	<joint name="s10" type="revolute">
+	  <parent link="upper_femur_left"/>
+	  <child link="d10_join"/>
+	  <origin xyz="0.1 0 -0.08" rpy="0 -1.57 0"/>
+	  <axis xyz="0 0 1"/>
+	  <limit effort="0" lower="-3.14" upper="3.14" velocity="0.5"/>
+	</joint>
+		
+	<link name="d10">
+	<visual>
+	  <geometry><box size="0.09 0.12 0.2"/></geometry>
+	  <material name="dgray"></material>          
+	</visual>
+	</link>
+	
+	<link name="d10_join">
+	<visual>
+	  <geometry><cylinder length="0.05" radius="0.03" /></geometry>
+	  <material name="blue"></material>
+	</visual>
+	</link>
+	
+	<joint name="d10_d10_join" type="fixed">
+	  <parent link="d10_join"/>
+	  <child link="d10"/>
+	  <origin xyz="-0.1 0 0.06" rpy="0 -1.57 0"/>
+	</joint>
+	
+	<link name="d12">
+	<visual>
+	  <geometry><box size="0.09 0.12 0.2"/></geometry>
+	  <material name="dgray"></material>          
+	</visual>
+	</link>
+	
+	<link name="d12_join">
+	<visual>
+	  <geometry><cylinder length="0.17" radius="0.03" /></geometry>
+	  <material name="blue"></material>
+	</visual>
+	</link>
+		
+	<joint name="d10_d12" type="fixed">
+	  <parent link="d10"/>
+	  <child link="d12"/>
+	  <origin xyz="0.1 0 0" rpy="0 0 1.57"/>
+	</joint>
+		
+	<joint name="d12_d12_join" type="fixed">
+	  <parent link="d12"/>
+	  <child link="d12_join"/>
+	  <origin xyz="0 0 0.05" rpy="0 -1.57 0"/>
+	</joint>
+	
+	<link name="mid_femur_left">
+	<visual>
+	  <geometry><box size="0.15 0.15 0.15"/></geometry>
+	  <material name="lgray"></material>
+	</visual>
+	</link>
+	
+	<link name="low_femur_left">
+	<visual>
+	  <geometry><box size="0.15 0.15 0.2"/></geometry>
+	  <material name="lgray"></material>
+	</visual>
+	</link>	
+	
+	<joint name="s12" type="revolute">
+	  <parent link="d12_join"/>
+	  <child link="mid_femur_left"/>
+	  <origin xyz="0 0 0" rpy="0 0 0"/>
+	  <axis xyz="0 0 -1"/>
+	  <limit effort="0" lower="-3.14" upper="3.14" velocity="0.5"/>
+	</joint>
+	
+	<joint name="ext_femur_left" type="fixed">
+	  <parent link="mid_femur_left"/>
+	  <child link="low_femur_left"/>
+	  <origin xyz="0.15 0.05 0" rpy="0 -1.57 0"/>
+	</joint>
+	
+	<link name="d14_join">
+	<visual>
+	  <geometry><cylinder length="0.17" radius="0.03" /></geometry>
+	  <material name="blue"></material>
+	</visual>
+	</link>
+	
+	<joint name="s14" type="revolute">
+	  <parent link="low_femur_left"/>
+	  <child link="d14_join"/>
+	  <origin xyz="0 0 -0.07" rpy="0 -1.57 0"/>
+	  <axis xyz="0 0 -1"/>
+	  <limit effort="0" lower="-3.14" upper="3.14" velocity="0.5"/>
+	</joint>
+
+	<link name="d14">
+	<visual>
+	  <geometry><box size="0.09 0.12 0.2"/></geometry>
+	  <material name="dgray"></material>          
+	</visual>
+	</link>	
+	
+	<joint name="d14_d14_join" type="fixed">
+	  <parent link="d14_join"/>
+	  <child link="d14"/>
+	  <origin xyz="0 -0.05 0" rpy="0 -1.57 -1.57"/>
+	</joint>
+	
+	<link name="tibia_left">
+	<visual>
+	  <geometry><box size="0.15 0.15 0.26"/></geometry>
+	  <material name="lgray"></material>
+	</visual>
+	</link>
+	
+	<joint name="d14_tibia_left" type="fixed">
+	  <parent link="d14"/>
+	  <child link="tibia_left"/>
+	  <origin xyz="0 -0.15 0" rpy="1.57 0 0"/>
+	</joint>
+	
+	<link name="d16_join">
+	<visual>
+	  <geometry><cylinder length="0.17" radius="0.03" /></geometry>
+	  <material name="blue"></material>
+	</visual>
+	</link>
+	
+	<joint name="s16" type="revolute">
+	  <parent link="tibia_left"/>
+	  <child link="d16_join"/>
+	  <origin xyz="0 0 0.09" rpy="0 -1.57 0"/>
+	  <axis xyz="0 0 1"/>
+	  <limit effort="0" lower="-3.14" upper="3.14" velocity="0.5"/>
+	</joint>
+	
+	<link name="d16">
+	<visual>
+	  <geometry><box size="0.09 0.12 0.2"/></geometry>
+	  <material name="dgray"></material>          
+	</visual>
+	</link>	
+	
+	<joint name="d16_d16_join" type="fixed">
+	  <parent link="d16_join"/>
+	  <child link="d16"/>
+	  <origin xyz="-0.05 0 0" rpy="0 -1.57 0"/>
+	</joint>
+	
+	<link name="d18">
+	<visual>
+	  <geometry><box size="0.09 0.12 0.2"/></geometry>
+	  <material name="dgray"></material>          
+	</visual>
+	</link>
+	
+	<joint name="d16_d16" type="fixed">
+	  <parent link="d16"/>
+	  <child link="d18"/>
+	  <origin xyz="0 0.1 0" rpy="0 0 1.57"/>
+	</joint>
+	
+	<link name="d18_join">
+	<visual>
+	  <geometry><cylinder length="0.17" radius="0.05" /></geometry>
+	  <material name="blue"></material>
+	</visual>
+	</link>
+	
+	<joint name="s18" type="revolute">
+	  <parent link="d18"/>
+	  <child link="d18_join"/>
+	  <origin xyz="0 0 -0.06" rpy="0 -1.57 0"/>
+	  <axis xyz="0 0 -1"/>
+	  <limit effort="0" lower="-3.14" upper="3.14" velocity="0.5"/>
+	</joint>
+	
+	<link name="feet_join_left">
+	<visual>
+	  <geometry><box size="0.1 0.06 0.2"/></geometry>
+	  <material name="lgray"></material>
+	</visual>
+	</link>
+	
+	<joint name="d18_join_feet_left" type="fixed">
+	  <parent link="d18_join"/>
+	  <child link="feet_join_left"/>
+	  <origin xyz="-0.05 0 0" rpy="0 0 0"/>
+	</joint>
+	
+	<link name="feet_left">
+	<visual>
+	  <geometry><box size="0.05 0.25 0.4"/></geometry>
+	  <material name="lgray"></material>
+	</visual>
+	</link>
+	
+	<joint name="feet_join_left_feet_left" type="fixed">
+	  <parent link="feet_join_left"/>
+	  <child link="feet_left"/>
+	  <origin xyz="-0.05 0 0.1" rpy="0 0 0"/>
+	</joint>
+	
+<!-- left leg ends -->
+	
+</robot>

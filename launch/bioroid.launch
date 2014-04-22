@@ -1,0 +1,57 @@
+﻿<launch>
+
+    <!-- Start tilt joint controller -->
+    <arg name="model" default="urdf/bioroid.urdf" />
+    <arg name="gui" default="True" />
+    <param name="robot_description" textfile="$(arg model)" />
+    <param name="use_gui" value="$(arg gui)"/>
+
+    <rosparam file="$(find ax12a_bioroid)/config/bioroid.yaml" command="load"/>
+
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" >
+        <param name="publish_frequency" value="20.0"/>
+    </node>
+
+    <node name="dynamixel_manager" pkg="dynamixel_controllers" type="controller_manager.py" required="true" output="screen">
+        <rosparam>
+            namespace: dxl_manager
+            serial_ports:
+                pan_tilt_port:
+                    port_name: "/dev/ttyUSB0"
+                    baud_rate: 1000000
+                    min_motor_id: 1
+                    max_motor_id: 25
+                    update_rate: 20
+        </rosparam>
+    </node>
+
+    <node name="dynamixel_controller_spawner" pkg="dynamixel_controllers" type="controller_spawner.py"
+          args="--manager=dxl_manager
+                --port pan_tilt_port
+                s1
+                s3
+                s5
+                s2
+                s4
+                s6
+                s7
+                s9
+                s11
+                s13
+                s15
+                s17
+                s8
+                s10
+                s12
+                s14
+                s16
+                s18"
+          output="screen"/>
+
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find urdf_tutorial)/urdf.rviz" required="true" />
+
+    <rosparam param="dynamixels">[s1, s3, s5, s2, s4, s6, s7, s9, s11, s13, s15, s17, s8, s10, s12, s14, s16, s18]</rosparam>
+
+    <node name="dynamixel_joint_states_publisher" pkg="ax12a_bioroid" type="dynamixel_joint_state_publisher.py" output="screen" />
+
+</launch>
