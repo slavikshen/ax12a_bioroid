@@ -37,3 +37,8 @@ The setup assume that you have the following environment
 - [ ] ガンダムが大地に立つ!!
  
 
+## More
+
+http://dynmobile.ghost.io/setup-ros-dynamixel-bioroid-on-mac/
+
+
