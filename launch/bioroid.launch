@@ -1,5 +1,22 @@
 ﻿<launch>
 
+  <!-- these are the arguments you can pass this launch file, for example paused:=true -->
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find rrbot_gazebo)/worlds/rrbot.world"/>
+    <arg name="debug" value="$(arg debug)" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="headless" value="$(arg headless)"/>
+  </include>
+  
     <!-- Start tilt joint controller -->
     <arg name="model" default="urdf/bioroid.urdf" />
     <arg name="gui" default="True" />
@@ -49,7 +66,10 @@
           output="screen"/>
 
     <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find urdf_tutorial)/urdf.rviz" required="true" /> -->
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ax12a_bioroid)/config/bioroid.rviz"  required="true" />
+    <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ax12a_bioroid)/config/bioroid.rviz"  required="true" /> -->
+    
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+	args="-urdf -model rrbot -param robot_description"/>
 
     <rosparam param="dynamixels">[s1, s3, s5, s2, s4, s6, s7, s9, s11, s13, s15, s17, s8, s10, s12, s14, s16, s18]</rosparam>
 
