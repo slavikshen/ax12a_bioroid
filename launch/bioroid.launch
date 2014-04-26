@@ -82,6 +82,6 @@
 
     <node name="dynamixel_joint_states_publisher" pkg="ax12a_bioroid" type="dynamixel_joint_state_publisher.py" output="screen" >
 	    <param name="use_gui" value="TRUE"/>
-    <node>
+    </node>
 
 </launch>
