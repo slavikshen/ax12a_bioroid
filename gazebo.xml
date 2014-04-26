@@ -1,0 +1,1075 @@
+<sdf version='1.4'>
+  <model name='bioloid'>
+    <link name='base_link'>
+      <pose>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>3.96508e-18 0 -0.0285714 0 -0 0</pose>
+        <mass>7</mass>
+        <inertia>
+          <ixx>7.10849</ixx>
+          <ixy>0</ixy>
+          <ixz>-7.93016e-19</ixz>
+          <iyy>7.20469</iyy>
+          <iyz>0</iyz>
+          <izz>7.0962</izz>
+        </inertia>
+      </inertial>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.4 0.24 0.2</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name='base_link_visual_d1'>
+        <pose>0.2 0 0.05 -1.57 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.09 0.12 0.2</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name='base_link_visual_d2'>
+        <pose>-0.2 0 0.05 -1.57 -4.33681e-19 3.14</pose>
+        <geometry>
+          <box>
+            <size>0.09 0.12 0.2</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name='base_link_visual_d7'>
+        <pose>0.09 0 -0.16 1.57 1.57 1.39418e-13</pose>
+        <geometry>
+          <box>
+            <size>0.09 0.12 0.2</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name='base_link_visual_d8'>
+        <pose>-0.09 0 -0.16 1.57 1.57 1.39418e-13</pose>
+        <geometry>
+          <box>
+            <size>0.09 0.12 0.2</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name='base_link_visual_head'>
+        <pose>0 0 0.18 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.14 0.2 0.14</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name='base_link_visual_pelvis'>
+        <pose>0 0 -0.16 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.1 0.24 0.12</size>
+          </box>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <link name='d7_join'>
+      <pose>0.0900398 3.46945e-18 -0.21 0.000796327 0.000795692 -1.57</pose>
+      <inertial>
+        <pose>0 0 -0.045 0 -0 0</pose>
+        <mass>2</mass>
+        <inertia>
+          <ixx>2.00405</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.00405</iyy>
+          <iyz>0</iyz>
+          <izz>2</izz>
+        </inertia>
+      </inertial>
+      <visual name='d7_join_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.05</length>
+            <radius>0.03</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name='d7_join_visual_upper_femur_right'>
+        <pose>0 0 -0.09 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.21 0.14 0.14</size>
+          </box>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='s7' type='revolute'>
+      <child>d7_join</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0.000795692 0.000796326 -0.999999</xyz>
+        <limit>
+          <lower>-3.14</lower>
+          <upper>3.14</upper>
+          <effort>0</effort>
+          <velocity>0.5</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='d9_join'>
+      <pose>0.0902548 -0.0998646 -0.380079 0.463807 -1.56902 -2.03381</pose>
+      <inertial>
+        <pose>-0.0874602 0 0.0950099 0 -0 0</pose>
+        <mass>4</mass>
+        <inertia>
+          <ixx>4.01871</ixx>
+          <ixy>0</ixy>
+          <ixz>0.0127421</ixz>
+          <iyy>4.03057</iyy>
+          <iyz>0</iyz>
+          <izz>4.01186</izz>
+        </inertia>
+      </inertial>
+      <visual name='d9_join_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.05</length>
+            <radius>0.03</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name='d9_join_visual_d11'>
+        <pose>-0.0999204 0 0.16 -1.57 -0.000796327 1.5708</pose>
+        <geometry>
+          <box>
+            <size>0.09 0.12 0.2</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name='d9_join_visual_d11_join'>
+        <pose>-0.14992 0 0.16004 -1.57159 -0.000796961 3.1408</pose>
+        <geometry>
+          <cylinder>
+            <length>0.17</length>
+            <radius>0.03</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name='d9_join_visual_d9'>
+        <pose>-0.1 0 0.06 0 -1.57 0</pose>
+        <geometry>
+          <box>
+            <size>0.09 0.12 0.2</size>
+          </box>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='s9' type='revolute'>
+      <child>d9_join</child>
+      <parent>d7_join</parent>
+      <axis>
+        <xyz>-0.000797594 0.999998 0.00159202</xyz>
+        <limit>
+          <lower>-3.14</lower>
+          <upper>3.14</upper>
+          <effort>0</effort>
+          <velocity>0.5</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='mid_femur_right'>
+      <pose>0.0902463 0.0604137 -0.529745 -2.15959 1.56793 0.98359</pose>
+      <inertial>
+        <pose>0.075 0.025 0 0 -0 0</pose>
+        <mass>2</mass>
+        <inertia>
+          <ixx>2.00125</ixx>
+          <ixy>-0.00375</ixy>
+          <ixz>0</ixz>
+          <iyy>2.01125</iyy>
+          <iyz>0</iyz>
+          <izz>2.0125</izz>
+        </inertia>
+      </inertial>
+      <visual name='mid_femur_right_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.15 0.15 0.15</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name='mid_femur_right_visual_low_femur_right'>
+        <pose>0.15 0.05 0 0 -1.57 0</pose>
+        <geometry>
+          <box>
+            <size>0.15 0.15 0.2</size>
+          </box>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='s11' type='revolute'>
+      <child>mid_femur_right</child>
+      <parent>d9_join</parent>
+      <axis>
+        <xyz>-0.999997 -0.00159075 -0.00159455</xyz>
+        <limit>
+          <lower>-3.14</lower>
+          <upper>3.14</upper>
+          <effort>0</effort>
+          <velocity>0.5</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='d13_join'>
+      <pose>0.0907318 0.0109399 -0.749863 -0.642961 -1.56681 -2.49704</pose>
+      <inertial>
+        <pose>-0.05 -0.0333731 -2.77556e-18 0 -0 0</pose>
+        <mass>3</mass>
+        <inertia>
+          <ixx>3.00167</ixx>
+          <ixy>-0.00251194</ixy>
+          <ixz>-8.32667e-19</ixz>
+          <iyy>3.015</iyy>
+          <iyz>-1.39441e-19</iyz>
+          <izz>3.01667</izz>
+        </inertia>
+      </inertial>
+      <visual name='d13_join_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.17</length>
+            <radius>0.03</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name='d13_join_visual_d13'>
+        <pose>0 -0.05 0 1.39418e-13 -1.57 -1.57</pose>
+        <geometry>
+          <box>
+            <size>0.09 0.12 0.2</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name='d13_join_visual_tibia_right'>
+        <pose>-0.15 -0.0501194 0 1.57 -1.57 -1.57</pose>
+        <geometry>
+          <box>
+            <size>0.15 0.15 0.26</size>
+          </box>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='s13' type='revolute'>
+      <child>d13_join</child>
+      <parent>mid_femur_right</parent>
+      <axis>
+        <xyz>0.999994 0.00158694 0.0031872</xyz>
+        <limit>
+          <lower>-3.14</lower>
+          <upper>3.14</upper>
+          <effort>0</effort>
+          <velocity>0.5</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='d15_join'>
+      <pose>0.0914159 0.0616334 -0.989742 -2.60237 1.56615 0.541613</pose>
+      <inertial>
+        <pose>-0.0333333 0.0333333 0 0 -0 0</pose>
+        <mass>3</mass>
+        <inertia>
+          <ixx>3.00667</ixx>
+          <ixy>0.00166667</ixy>
+          <ixz>0</ixz>
+          <iyy>3.00167</iyy>
+          <iyz>0</iyz>
+          <izz>3.00833</izz>
+        </inertia>
+      </inertial>
+      <visual name='d15_join_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.17</length>
+            <radius>0.03</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name='d15_join_visual_d15'>
+        <pose>-0.05 0 0 0 -1.57 0</pose>
+        <geometry>
+          <box>
+            <size>0.09 0.12 0.2</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name='d15_join_visual_d17'>
+        <pose>-0.05 0.1 0 -1.57 -0.000796327 1.5708</pose>
+        <geometry>
+          <box>
+            <size>0.09 0.12 0.2</size>
+          </box>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='s15' type='revolute'>
+      <child>d15_join</child>
+      <parent>d13_join</parent>
+      <axis>
+        <xyz>0.999989 0.00238135 0.00398605</xyz>
+        <limit>
+          <lower>-3.14</lower>
+          <upper>3.14</upper>
+          <effort>0</effort>
+          <velocity>0.5</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='d17_join'>
+      <pose>0.0917426 -0.038342 -0.99998 0.983038 -1.56505 -2.55224</pose>
+      <inertial>
+        <pose>-0.05 0 0.0333333 0 -0 0</pose>
+        <mass>3</mass>
+        <inertia>
+          <ixx>3.00667</ixx>
+          <ixy>0</ixy>
+          <ixz>0.005</ixz>
+          <iyy>3.01167</iyy>
+          <iyz>0</iyz>
+          <izz>3.005</izz>
+        </inertia>
+      </inertial>
+      <visual name='d17_join_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.17</length>
+            <radius>0.05</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name='d17_join_visual_feet_join_right'>
+        <pose>-0.05 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.1 0.06 0.2</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name='d17_join_visual_feet_right'>
+        <pose>-0.1 0 0.1 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05 0.25 0.4</size>
+          </box>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='s17' type='revolute'>
+      <child>d17_join</child>
+      <parent>d15_join</parent>
+      <axis>
+        <xyz>0.00159836 -0.999994 -0.00318529</xyz>
+        <limit>
+          <lower>-3.14</lower>
+          <upper>3.14</upper>
+          <effort>0</effort>
+          <velocity>0.5</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='d8_join'>
+      <pose>-0.0899602 3.46945e-18 -0.21 0.000796327 0.000795692 -1.57</pose>
+      <inertial>
+        <pose>0 0 -0.045 0 -0 0</pose>
+        <mass>2</mass>
+        <inertia>
+          <ixx>2.00405</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.00405</iyy>
+          <iyz>0</iyz>
+          <izz>2</izz>
+        </inertia>
+      </inertial>
+      <visual name='d8_join_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.05</length>
+            <radius>0.03</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name='d8_join_visual_upper_femur_left'>
+        <pose>0 0 -0.09 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.21 0.14 0.14</size>
+          </box>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='s8' type='revolute'>
+      <child>d8_join</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0.000795692 0.000796326 -0.999999</xyz>
+        <limit>
+          <lower>-3.14</lower>
+          <upper>3.14</upper>
+          <effort>0</effort>
+          <velocity>0.5</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='d10_join'>
+      <pose>-0.0897452 -0.0998646 -0.380079 0.463807 -1.56902 -2.03381</pose>
+      <inertial>
+        <pose>-0.0874602 0 0.0950099 0 -0 0</pose>
+        <mass>4</mass>
+        <inertia>
+          <ixx>4.01871</ixx>
+          <ixy>0</ixy>
+          <ixz>0.0127421</ixz>
+          <iyy>4.03057</iyy>
+          <iyz>0</iyz>
+          <izz>4.01186</izz>
+        </inertia>
+      </inertial>
+      <visual name='d10_join_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.05</length>
+            <radius>0.03</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name='d10_join_visual_d10'>
+        <pose>-0.1 0 0.06 0 -1.57 0</pose>
+        <geometry>
+          <box>
+            <size>0.09 0.12 0.2</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name='d10_join_visual_d12'>
+        <pose>-0.0999204 0 0.16 -1.57 -0.000796327 1.5708</pose>
+        <geometry>
+          <box>
+            <size>0.09 0.12 0.2</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name='d10_join_visual_d12_join'>
+        <pose>-0.14992 0 0.16004 -1.57159 -0.000796961 3.1408</pose>
+        <geometry>
+          <cylinder>
+            <length>0.17</length>
+            <radius>0.03</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='s10' type='revolute'>
+      <child>d10_join</child>
+      <parent>d8_join</parent>
+      <axis>
+        <xyz>-0.000797594 0.999998 0.00159202</xyz>
+        <limit>
+          <lower>-3.14</lower>
+          <upper>3.14</upper>
+          <effort>0</effort>
+          <velocity>0.5</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='mid_femur_left'>
+      <pose>-0.0897537 0.0604137 -0.529745 -2.15959 1.56793 0.98359</pose>
+      <inertial>
+        <pose>0.075 0.025 0 0 -0 0</pose>
+        <mass>2</mass>
+        <inertia>
+          <ixx>2.00125</ixx>
+          <ixy>-0.00375</ixy>
+          <ixz>0</ixz>
+          <iyy>2.01125</iyy>
+          <iyz>0</iyz>
+          <izz>2.0125</izz>
+        </inertia>
+      </inertial>
+      <visual name='mid_femur_left_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.15 0.15 0.15</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name='mid_femur_left_visual_low_femur_left'>
+        <pose>0.15 0.05 0 0 -1.57 0</pose>
+        <geometry>
+          <box>
+            <size>0.15 0.15 0.2</size>
+          </box>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='s12' type='revolute'>
+      <child>mid_femur_left</child>
+      <parent>d10_join</parent>
+      <axis>
+        <xyz>0.999997 0.00159075 0.00159455</xyz>
+        <limit>
+          <lower>-3.14</lower>
+          <upper>3.14</upper>
+          <effort>0</effort>
+          <velocity>0.5</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='d14_join'>
+      <pose>-0.0892682 0.0109399 -0.749863 -0.642961 -1.56681 -2.49704</pose>
+      <inertial>
+        <pose>-0.05 -0.0333731 -2.77556e-18 0 -0 0</pose>
+        <mass>3</mass>
+        <inertia>
+          <ixx>3.00167</ixx>
+          <ixy>-0.00251194</ixy>
+          <ixz>-8.32667e-19</ixz>
+          <iyy>3.015</iyy>
+          <iyz>-1.39441e-19</iyz>
+          <izz>3.01667</izz>
+        </inertia>
+      </inertial>
+      <visual name='d14_join_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.17</length>
+            <radius>0.03</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name='d14_join_visual_d14'>
+        <pose>0 -0.05 0 1.39418e-13 -1.57 -1.57</pose>
+        <geometry>
+          <box>
+            <size>0.09 0.12 0.2</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name='d14_join_visual_tibia_left'>
+        <pose>-0.15 -0.0501194 0 1.57 -1.57 -1.57</pose>
+        <geometry>
+          <box>
+            <size>0.15 0.15 0.26</size>
+          </box>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='s14' type='revolute'>
+      <child>d14_join</child>
+      <parent>mid_femur_left</parent>
+      <axis>
+        <xyz>-0.999994 -0.00158694 -0.0031872</xyz>
+        <limit>
+          <lower>-3.14</lower>
+          <upper>3.14</upper>
+          <effort>0</effort>
+          <velocity>0.5</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='d16_join'>
+      <pose>-0.0885841 0.0616334 -0.989742 -2.60237 1.56615 0.541613</pose>
+      <inertial>
+        <pose>-0.0333333 0.0333333 0 0 -0 0</pose>
+        <mass>3</mass>
+        <inertia>
+          <ixx>3.00667</ixx>
+          <ixy>0.00166667</ixy>
+          <ixz>0</ixz>
+          <iyy>3.00167</iyy>
+          <iyz>0</iyz>
+          <izz>3.00833</izz>
+        </inertia>
+      </inertial>
+      <visual name='d16_join_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.17</length>
+            <radius>0.03</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name='d16_join_visual_d16'>
+        <pose>-0.05 0 0 0 -1.57 0</pose>
+        <geometry>
+          <box>
+            <size>0.09 0.12 0.2</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name='d16_join_visual_d18'>
+        <pose>-0.05 0.1 0 -1.57 -0.000796327 1.5708</pose>
+        <geometry>
+          <box>
+            <size>0.09 0.12 0.2</size>
+          </box>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='s16' type='revolute'>
+      <child>d16_join</child>
+      <parent>d14_join</parent>
+      <axis>
+        <xyz>-0.999989 -0.00238135 -0.00398605</xyz>
+        <limit>
+          <lower>-3.14</lower>
+          <upper>3.14</upper>
+          <effort>0</effort>
+          <velocity>0.5</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='d18_join'>
+      <pose>-0.0882574 -0.038342 -0.99998 0.983038 -1.56505 -2.55224</pose>
+      <inertial>
+        <pose>-0.05 0 0.0333333 0 -0 0</pose>
+        <mass>3</mass>
+        <inertia>
+          <ixx>3.00667</ixx>
+          <ixy>0</ixy>
+          <ixz>0.005</ixz>
+          <iyy>3.01167</iyy>
+          <iyz>0</iyz>
+          <izz>3.005</izz>
+        </inertia>
+      </inertial>
+      <visual name='d18_join_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.17</length>
+            <radius>0.05</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name='d18_join_visual_feet_join_left'>
+        <pose>-0.05 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.1 0.06 0.2</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name='d18_join_visual_feet_left'>
+        <pose>-0.1 0 0.1 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05 0.25 0.4</size>
+          </box>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='s18' type='revolute'>
+      <child>d18_join</child>
+      <parent>d16_join</parent>
+      <axis>
+        <xyz>0.00159836 -0.999994 -0.00318529</xyz>
+        <limit>
+          <lower>-3.14</lower>
+          <upper>3.14</upper>
+          <effort>0</effort>
+          <velocity>0.5</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='d1_join'>
+      <pose>0.25 0 0.05 -1.5708 -0.000796327 1.57</pose>
+      <inertial>
+        <pose>0 0 -0.05 0 -0 0</pose>
+        <mass>2</mass>
+        <inertia>
+          <ixx>2.005</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.005</iyy>
+          <iyz>0</iyz>
+          <izz>2</izz>
+        </inertia>
+      </inertial>
+      <visual name='d1_join_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.04</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name='d1_join_visual_shoulder_right'>
+        <pose>0 0 -0.1 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.09 0.09 0.09</size>
+          </box>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='s1' type='revolute'>
+      <child>d1_join</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>1 -0.000796326 -6.34136e-07</xyz>
+        <limit>
+          <lower>-3.14</lower>
+          <upper>3.14</upper>
+          <effort>0</effort>
+          <velocity>0.5</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='d3_join'>
+      <pose>0.35004 0.0499203 0.0500398 -0.000795693 -0.000796327 1.57</pose>
+      <inertial>
+        <pose>0 -0.115 -3.84891e-05 0 -0 0</pose>
+        <mass>3</mass>
+        <inertia>
+          <ixx>3.03035</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>3</iyy>
+          <iyz>-1.50108e-05</iyz>
+          <izz>3.03035</izz>
+        </inertia>
+      </inertial>
+      <visual name='d3_join_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.05</length>
+            <radius>0.03</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name='d3_join_visual_arm_joint_right'>
+        <pose>0 -0.245 -0.000115467 -1.57 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.09 0.09 0.09</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name='d3_join_visual_d3'>
+        <pose>0 -0.1 0 -1.57 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.09 0.12 0.2</size>
+          </box>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='s3' type='revolute'>
+      <child>d3_join</child>
+      <parent>d1_join</parent>
+      <axis>
+        <xyz>0.000796326 0.000795692 -0.999999</xyz>
+        <limit>
+          <lower>-3.14</lower>
+          <upper>3.14</upper>
+          <effort>0</effort>
+          <velocity>0.5</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='d5_join'>
+      <pose>0.64504 0.0496854 0.0501192 -0.000795693 -0.000796327 1.57</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <visual name='d5_join_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.05</length>
+            <radius>0.03</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name='d5_join_visual_d5'>
+        <pose>0 -0.1 0 -1.57 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.09 0.12 0.2</size>
+          </box>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='s5' type='revolute'>
+      <child>d5_join</child>
+      <parent>d3_join</parent>
+      <axis>
+        <xyz>0.000796326 0.000795692 -0.999999</xyz>
+        <limit>
+          <lower>-3.14</lower>
+          <upper>3.14</upper>
+          <effort>0</effort>
+          <velocity>0.5</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='d2_join'>
+      <pose>-0.25 7.96326e-05 0.05 -1.5708 -0.000796327 -1.57319</pose>
+      <inertial>
+        <pose>0 0 -0.05 0 -0 0</pose>
+        <mass>2</mass>
+        <inertia>
+          <ixx>2.005</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.005</iyy>
+          <iyz>0</iyz>
+          <izz>2</izz>
+        </inertia>
+      </inertial>
+      <visual name='d2_join_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.04</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name='d2_join_visual_shoulder_left'>
+        <pose>0 0 -0.1 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.09 0.09 0.09</size>
+          </box>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='s2' type='revolute'>
+      <child>d2_join</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>-0.999997 0.00238898 -6.34136e-07</xyz>
+        <limit>
+          <lower>-3.14</lower>
+          <upper>3.14</upper>
+          <effort>0</effort>
+          <velocity>0.5</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='d4_join'>
+      <pose>-0.34988 0.0503184 0.0499601 -0.000795693 -0.000796327 -1.57319</pose>
+      <inertial>
+        <pose>0 -0.115 -3.84891e-05 0 -0 0</pose>
+        <mass>3</mass>
+        <inertia>
+          <ixx>3.03035</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>3</iyy>
+          <iyz>-1.50108e-05</iyz>
+          <izz>3.03035</izz>
+        </inertia>
+      </inertial>
+      <visual name='d4_join_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.05</length>
+            <radius>0.03</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name='d4_join_visual_arm_joint_left'>
+        <pose>0 -0.245 -0.000115467 -1.57 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.09 0.09 0.09</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name='d4_join_visual_d4'>
+        <pose>0 -0.1 0 -1.57 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.09 0.12 0.2</size>
+          </box>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='s4' type='revolute'>
+      <child>d4_join</child>
+      <parent>d2_join</parent>
+      <axis>
+        <xyz>-0.000797593 -0.000794423 -0.999999</xyz>
+        <limit>
+          <lower>-3.14</lower>
+          <upper>3.14</upper>
+          <effort>0</effort>
+          <velocity>0.5</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='d6_join'>
+      <pose>-0.644879 0.0510232 0.0500396 -0.000795693 -0.000796327 -1.57319</pose>
+      <inertial>
+        <pose>0 -0.05 0 0 -0 0</pose>
+        <mass>2</mass>
+        <inertia>
+          <ixx>2.005</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2</iyy>
+          <iyz>0</iyz>
+          <izz>2.005</izz>
+        </inertia>
+      </inertial>
+      <visual name='d6_join_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.05</length>
+            <radius>0.03</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name='d6_join_visual_d6'>
+        <pose>0 -0.1 0 -1.57 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.09 0.12 0.2</size>
+          </box>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='s6' type='revolute'>
+      <child>d6_join</child>
+      <parent>d4_join</parent>
+      <axis>
+        <xyz>-0.000797593 -0.000794423 -0.999999</xyz>
+        <limit>
+          <lower>-3.14</lower>
+          <upper>3.14</upper>
+          <effort>0</effort>
+          <velocity>0.5</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+  </model>
+</sdf>
