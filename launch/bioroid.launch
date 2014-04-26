@@ -49,7 +49,7 @@
           output="screen"/>
 
     <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find urdf_tutorial)/urdf.rviz" required="true" /> -->
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ax12z_bioroid/config/bioroid.rviz"  required="true" />
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ax12x_bioroid/config/bioroid.rviz"  required="true" />
 
     <rosparam param="dynamixels">[s1, s3, s5, s2, s4, s6, s7, s9, s11, s13, s15, s17, s8, s10, s12, s14, s16, s18]</rosparam>
 
