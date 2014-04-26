@@ -1,6 +1,9 @@
 <?xml version="1.0" ?>
 <robot name="bioloid">
 
+  <gazebo reference="link2">
+    <material>Gazebo/Black</material>
+  </gazebo>
 <!-- body begins -->
     <link name="base_link">
     <visual>
