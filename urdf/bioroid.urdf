@@ -8,7 +8,7 @@
       <material name="gray"><color rgba="0.6 0.6 0.6 0.9"/></material>
     </visual>
     <inertial>
-      <origin xyz="0 0 2" rpy="0 0 0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <mass value="1"/>
       <inertia
         ixx="1.0" ixy="0.0" ixz="0.0"
@@ -22,6 +22,14 @@
       <geometry><box size="0.14 0.2 0.14" /></geometry>
       <material name="gray"></material>
     </visual>
+        <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
     </link>
 
     <joint name="neck" type="fixed">
@@ -39,6 +47,14 @@
 	  <geometry><box size="0.09 0.12 0.2"/></geometry>
 	  <material name="dgray"><color rgba="0.3 0.3 0.3 0.95"/></material>          
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 
 	<joint name="d1_d1_join" type="fixed">
@@ -52,6 +68,14 @@
 	  <geometry><cylinder length="0.1" radius="0.04" /></geometry>
 	  <material name="blue"><color rgba="0.3 0.3 1 1"/></material>
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 
 	<joint name="s1" type="revolute">
@@ -67,6 +91,14 @@
 	  <geometry><box size="0.09 0.09 0.09"/></geometry>
 	  <material name="clear_gray"><color rgba="0.6 0.6 0.6 0.8"/></material>          
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 
 	<joint name="d1_join_shoulder_right" type="fixed">
@@ -80,6 +112,14 @@
 	  <geometry><cylinder length="0.05" radius="0.03" /></geometry>
 	  <material name="blue"></material>
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 
 	<link name="d3">
@@ -87,6 +127,14 @@
 	  <geometry><box size="0.09 0.12 0.2"/></geometry>
 	  <material name="dgray"></material>          
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 	
 	<joint name="d3_d3_join" type="fixed">
@@ -108,6 +156,14 @@
 	  <geometry><box size="0.09 0.09 0.09"/></geometry>
 	  <material name="clear_gray"></material>          
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 
 	<joint name="d3_arm_joint_right" type="fixed">
@@ -121,6 +177,14 @@
 	  <geometry><cylinder length="0.05" radius="0.03" /></geometry>
 	  <material name="blue"></material>
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 
 	<link name="d5">
@@ -154,6 +218,14 @@
 	  <geometry><box size="0.09 0.12 0.2"/></geometry>
 	  <material name="dgray"></material>          
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 
 	<joint name="d2_d2_join" type="fixed">
@@ -167,6 +239,14 @@
 	  <geometry><cylinder length="0.1" radius="0.04" /></geometry>
 	  <material name="red"><color rgba="1 0.3 0.3 1"/></material>
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 	
 	<joint name="s2" type="revolute">
@@ -182,6 +262,14 @@
 	  <geometry><box size="0.09 0.09 0.09"/></geometry>
 	  <material name="clear_gray"></material>          
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 
 	<joint name="d2_join_shoulder_left" type="fixed">
@@ -195,6 +283,14 @@
 	  <geometry><cylinder length="0.05" radius="0.03" /></geometry>
 	  <material name="red"></material>
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 
 	<link name="d4">
@@ -202,6 +298,14 @@
 	  <geometry><box size="0.09 0.12 0.2"/></geometry>
 	  <material name="dgray"></material>          
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 	
 	<joint name="d4_d4_join" type="fixed">
@@ -223,6 +327,14 @@
 	  <geometry><box size="0.09 0.09 0.09"/></geometry>
 	  <material name="clear_gray"></material>          
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 
 	<joint name="d4_arm_joint_left" type="fixed">
@@ -236,6 +348,14 @@
 	  <geometry><cylinder length="0.05" radius="0.03" /></geometry>
 	  <material name="blue"></material>
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 
 	<link name="d6">
@@ -243,6 +363,14 @@
 	  <geometry><box size="0.09 0.12 0.2"/></geometry>
 	  <material name="dgray"></material>          
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 
 	<joint name="d6_d6_join" type="fixed">
@@ -267,6 +395,14 @@
 	  <geometry><box size="0.1 0.24 0.12"/></geometry>
 	  <material name="lgray"><color rgba="0.7 0.7 0.7 0.8"/></material>         
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 	
 	<joint name="base_link_pelvis" type="fixed">
@@ -280,6 +416,14 @@
 	  <geometry><box size="0.09 0.12 0.2"/></geometry>
 	  <material name="dgray"></material>          
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 	
 	<link name="d8">
@@ -287,6 +431,14 @@
 	  <geometry><box size="0.09 0.12 0.2"/></geometry>
 	  <material name="dgray"></material>          
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 	
 	<joint name="pelvis_d7_right" type="fixed">
@@ -310,6 +462,14 @@
 	  <geometry><cylinder length="0.05" radius="0.03" /></geometry>
 	  <material name="blue"></material>
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 
 	<joint name="s7" type="revolute">
@@ -325,6 +485,14 @@
 	  <geometry><box size="0.21 0.14 0.14"/></geometry>
 	  <material name="lgray"></material>
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 
 	<joint name="d7_joint_upper_femur_right" type="fixed">
@@ -346,6 +514,14 @@
 	  <geometry><box size="0.09 0.12 0.2"/></geometry>
 	  <material name="dgray"></material>          
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 	
 	<link name="d9_join">
@@ -353,6 +529,14 @@
 	  <geometry><cylinder length="0.05" radius="0.03" /></geometry>
 	  <material name="blue"></material>
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 	
 	<joint name="d9_d9_join" type="fixed">
@@ -366,6 +550,14 @@
 	  <geometry><box size="0.09 0.12 0.2"/></geometry>
 	  <material name="dgray"></material>          
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 	
 	<link name="d11_join">
@@ -373,6 +565,14 @@
 	  <geometry><cylinder length="0.17" radius="0.03" /></geometry>
 	  <material name="blue"></material>
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 		
 	<joint name="d9_d11" type="fixed">
@@ -392,6 +592,14 @@
 	  <geometry><box size="0.15 0.15 0.15"/></geometry>
 	  <material name="lgray"></material>
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 	
 	<link name="low_femur_right">
@@ -399,6 +607,14 @@
 	  <geometry><box size="0.15 0.15 0.2"/></geometry>
 	  <material name="lgray"></material>
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>	
 	
 	<joint name="s11" type="revolute">
@@ -420,6 +636,14 @@
 	  <geometry><cylinder length="0.17" radius="0.03" /></geometry>
 	  <material name="blue"></material>
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 	
 	<joint name="s13" type="revolute">
@@ -435,6 +659,14 @@
 	  <geometry><box size="0.09 0.12 0.2"/></geometry>
 	  <material name="dgray"></material>          
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>	
 	
 	<joint name="d13_d13_join" type="fixed">
@@ -448,6 +680,14 @@
 	  <geometry><box size="0.15 0.15 0.26"/></geometry>
 	  <material name="lgray"></material>
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 	
 	<joint name="d13_tibia_right" type="fixed">
@@ -461,6 +701,14 @@
 	  <geometry><cylinder length="0.17" radius="0.03" /></geometry>
 	  <material name="blue"></material>
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 	
 	<joint name="s15" type="revolute">
@@ -476,6 +724,14 @@
 	  <geometry><box size="0.09 0.12 0.2"/></geometry>
 	  <material name="dgray"></material>          
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>	
 	
 	<joint name="d15_d15_join" type="fixed">
@@ -489,6 +745,14 @@
 	  <geometry><box size="0.09 0.12 0.2"/></geometry>
 	  <material name="dgray"></material>          
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 	
 	<joint name="d15_d17" type="fixed">
@@ -502,6 +766,14 @@
 	  <geometry><cylinder length="0.17" radius="0.05" /></geometry>
 	  <material name="blue"></material>
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 	
 	<joint name="s17" type="revolute">
@@ -517,6 +789,14 @@
 	  <geometry><box size="0.1 0.06 0.2"/></geometry>
 	  <material name="lgray"></material>
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 	
 	<joint name="d17_join_feet_right" type="fixed">
@@ -530,6 +810,14 @@
 	  <geometry><box size="0.05 0.25 0.4"/></geometry>
 	  <material name="lgray"></material>
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 	
 	<joint name="feet_join_right_feet_right" type="fixed">
@@ -547,6 +835,14 @@
 	  <geometry><cylinder length="0.05" radius="0.03" /></geometry>
 	  <material name="red"></material>
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 	
 	<joint name="s8" type="revolute">
@@ -562,6 +858,14 @@
 	  <geometry><box size="0.21 0.14 0.14"/></geometry>
 	  <material name="lgray"></material>
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 
 	<joint name="d8_joint_upper_femur_left" type="fixed">
@@ -583,6 +887,14 @@
 	  <geometry><box size="0.09 0.12 0.2"/></geometry>
 	  <material name="dgray"></material>          
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 	
 	<link name="d10_join">
@@ -590,6 +902,14 @@
 	  <geometry><cylinder length="0.05" radius="0.03" /></geometry>
 	  <material name="red"></material>
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 	
 	<joint name="d10_d10_join" type="fixed">
@@ -603,6 +923,14 @@
 	  <geometry><box size="0.09 0.12 0.2"/></geometry>
 	  <material name="dgray"></material>          
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 	
 	<link name="d12_join">
@@ -610,6 +938,14 @@
 	  <geometry><cylinder length="0.17" radius="0.03" /></geometry>
 	  <material name="red"></material>
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 		
 	<joint name="d10_d12" type="fixed">
@@ -629,6 +965,14 @@
 	  <geometry><box size="0.15 0.15 0.15"/></geometry>
 	  <material name="lgray"></material>
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 	
 	<link name="low_femur_left">
@@ -636,6 +980,14 @@
 	  <geometry><box size="0.15 0.15 0.2"/></geometry>
 	  <material name="lgray"></material>
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>	
 	
 	<joint name="s12" type="revolute">
@@ -657,6 +1009,14 @@
 	  <geometry><cylinder length="0.17" radius="0.03" /></geometry>
 	  <material name="red"></material>
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 	
 	<joint name="s14" type="revolute">
@@ -672,6 +1032,14 @@
 	  <geometry><box size="0.09 0.12 0.2"/></geometry>
 	  <material name="dgray"></material>          
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>	
 	
 	<joint name="d14_d14_join" type="fixed">
@@ -685,6 +1053,14 @@
 	  <geometry><box size="0.15 0.15 0.26"/></geometry>
 	  <material name="lgray"></material>
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 	
 	<joint name="d14_tibia_left" type="fixed">
@@ -698,6 +1074,14 @@
 	  <geometry><cylinder length="0.17" radius="0.03" /></geometry>
 	  <material name="red"></material>
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 	
 	<joint name="s16" type="revolute">
@@ -713,6 +1097,14 @@
 	  <geometry><box size="0.09 0.12 0.2"/></geometry>
 	  <material name="dgray"></material>          
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>	
 	
 	<joint name="d16_d16_join" type="fixed">
@@ -726,6 +1118,14 @@
 	  <geometry><box size="0.09 0.12 0.2"/></geometry>
 	  <material name="dgray"></material>          
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 	
 	<joint name="d16_d16" type="fixed">
@@ -739,6 +1139,14 @@
 	  <geometry><cylinder length="0.17" radius="0.05" /></geometry>
 	  <material name="red"></material>
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 	
 	<joint name="s18" type="revolute">
@@ -754,6 +1162,14 @@
 	  <geometry><box size="0.1 0.06 0.2"/></geometry>
 	  <material name="lgray"></material>
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 	
 	<joint name="d18_join_feet_left" type="fixed">
@@ -767,6 +1183,14 @@
 	  <geometry><box size="0.05 0.25 0.4"/></geometry>
 	  <material name="lgray"></material>
 	</visual>
+	<inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
 	</link>
 	
 	<joint name="feet_join_left_feet_left" type="fixed">
